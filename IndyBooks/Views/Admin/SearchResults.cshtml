@@ -1,0 +1,46 @@
+﻿@model IndyBooks.ViewModels.SearchResultsVM
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    ViewBag.Title = "Admin Search";
+    Layout = "_Layout";
+    var sortedBooks = Model.Books.OrderBy(f => f.Title).OrderByDescending(f => f.Price);
+    string bookCount = Model.Books.Count().ToString();
+}
+
+<h3>Search Result <em style="font-family: Helvetica;""> now showing 
+    <span style="color: darkred;">@bookCount books</span></em></h3>
+<table class="table">
+    <tr>
+        <th>Title</th>
+        <th>Author</th>
+        <th>Price</th>
+        <th>Year</th>
+    </tr>
+
+    @foreach (var book in sortedBooks)
+    {
+        <tr>
+            <td>
+                @book.Title
+            </td>
+            <td>
+                @book.Author 
+            </td>
+            <td class="rightedge">
+                 @book.Price.ToString("C")
+            </td>
+            <td class="rightedge">
+                @book.Year
+            </td>
+        </tr>
+    }
+    @if(Model.isSale)
+        { //Uses the Sum method and lambda selector on the FoundBooks Collection to display the total sale price
+            <tr><td colspan="4" align="right"><b>Total Sale Cost:</b>
+                $@Model.Books.Sum(b => b.Price)
+                </td></tr>
+        }
+</table>
+
+

@@ -1,0 +1,19 @@
+@model IndyBooks.ViewModels.CreateBookVM
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    Layout = "_Layout";
+    ViewBag.Title = "Create Book";
+
+}
+<h3>Add New Book</h3>
+<form asp-action="CreateBook" asp-controller="Admin">
+    <!-- TODO: Modify the basic template below using asp- tag helpers to create 
+        a label, field, and validaiton error message span for each CreateBook field in Fig.3 -->
+    <div>
+        <label ></label>
+        <input />
+        <span ></span>
+    </div>
+   
+    <input type="submit" value="Submit" />
+</form>
