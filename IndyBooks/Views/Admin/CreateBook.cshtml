@@ -9,6 +9,27 @@
 <form asp-action="CreateBook" asp-controller="Admin">
     <!-- TODO: Modify the basic template below using asp- tag helpers to create 
         a label, field, and validaiton error message span for each CreateBook field in Fig.3 -->
+         <label asp-for="Title"></label>
+        <input asp-for="Title" />
+       <span>@Model.Title</span>
+        </field>
+        <field>
+        <label asp-for="Name"></label>
+        <input asp-for="Name" />
+        <span>@Model.Name</span>
+        </field>
+        <field>
+        <label asp-for="SKU"></label>
+        <input asp-for="SKU" />
+        <span>@Model.SKU</span>
+        </field>
+        <field>
+        <label asp-for="Price"></label>
+        <input asp-for="Price" />
+        <span>@Model.Price</span>
+        </field>
+      
+
     <div>
         <label ></label>
         <input />
